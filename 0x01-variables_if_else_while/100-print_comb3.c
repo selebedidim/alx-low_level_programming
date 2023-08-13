@@ -1,11 +1,14 @@
 #include <stdio.h>
 /**
- * main -  prints all possible different combinations of two digits.
- * Description : Combination of two digits
- * Return : always 0
- *
+ * main - main block
+ * Description: Print all possible combinations of single-digit numbers.
+ * Numbers must be separated by commas and a space.
+ * You can only use `putchar` to print to the console.
+ * You can only use `putchar` up to five times.
+ * You are not allowed to use any variable of type `int`.
+ * Return: 0
  */
-int main(void)
+int  main(void)
 {
 	int i, j;
 
