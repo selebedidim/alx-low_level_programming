@@ -5,25 +5,25 @@
  * Numbers must be separated by commas and a space.
  * You can only use `putchar` to print to the console.
  * You can only use `putchar` up to four times.
- * You are not allowed to use any variable of type `char`.
+ * You are not allowed to use any variable of type `int`.
  * Return: 0
  */
 int main(void)
 {
-	char d = '0';
+	int num;
 
-	while (d <= '9')
+	for (num = 0; num <= 9; num++)
 	{
-		putchar(d);
-		if (d  <= '8')
-		{
-			putchar(',');
-			putchar(' ');
-		}
-		d++;
+		putchar((num % 10) + '0');
+		if (num == 9)
+			continue;
+
+		putchar(',');
+		putchar(' ');
 	}
 	putchar('\n');
 
 	return (0);
+
 }
 
