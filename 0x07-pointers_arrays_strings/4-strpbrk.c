@@ -3,8 +3,7 @@
 /**
  * _strpbrk - Searches a string for any of a set bytes
  * @s:string to be searched
- * @accept:set of bytes to be searched for 
- *
+ * @accept:set of bytes to be searched for
  * Return:if set is  matched -pointer to the matched byte
  *        if not set is matched null
  */
