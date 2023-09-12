@@ -2,14 +2,15 @@
 #include <stdlib.h>
 
 /**
- * free_dog -frees the memory of the dogs created
+ * free_dog - frees the memory of the dog created
  * @d:pointer to dog_t
  */
 void free_dog(dog_t *d)
 {
 	if (d != NULL)
-		return;
-	free(d->owner);
-	free(d->name);
-	free(d);
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 }
