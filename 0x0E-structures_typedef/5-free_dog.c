@@ -3,7 +3,7 @@
 
 /**
  * free_dog -frees the memory of the dogs created
- * @d:pointer to freed
+ * @d:pointer to dog_t
  */
 void free_dog(dog_t *d)
 {
