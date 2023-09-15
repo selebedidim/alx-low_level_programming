@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * print_opcodes - Prints the opcodes of the program
- * @a:Address of the main function
- * @n:Number of bytes to print
+ * print_opcodes - prints the opcodes of the program
+ * @a:address of the main function
+ * @n:number of bytes to print
  *
  * Return:0
  */
@@ -21,9 +21,9 @@ void print_opcodes(char *a, int n)
 	printf("\n");
 }
 /**
- * main - prints the opcodes of its own main function
- * @argc:Argument count
- * @argv:Argument vector
+ * main - print the opcodes of its own main funtion
+ * @argc:argument count
+ * @argv:argument vector
  *
  * Return:0
  */
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	n = atoi(argv[1]);
-
 	if (n < 0)
 	{
 		printf("Error\n");
