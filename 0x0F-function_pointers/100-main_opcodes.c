@@ -21,7 +21,7 @@ void print_opcodes(char *a, int n)
 	printf("\n");
 }
 /**
- * main - prints the opcodes of main function
+ * main - prints the opcodes of its own main function
  * @argc:Argument count
  * @argv:Argument vector
  *
