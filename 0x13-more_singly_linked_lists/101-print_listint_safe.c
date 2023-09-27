@@ -10,12 +10,12 @@ size_t print_listint_safe(const listint_t *head);
  * @head:A pointer to the head of the listint_t to check
  *
  * Return:0 if the list is not looped
- *        otherwise the number of special node in the lists
+ *        otherwise the number of special nodes in the lists
  */
 size_t looped_listint_len(const listint_t *head)
 {
 	const listint_t *tortoise, *hare;
-	size_t node = 1;
+	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
@@ -29,17 +29,17 @@ size_t looped_listint_len(const listint_t *head)
 			tortoise = head;
 		while (tortoise != hare)
 		{
-			node++;
+			nodes++;
 			tortoise = tortoise->next;
 			hare = hare->next;
 		}
 		tortoise = tortoise->next;
 		while (tortoise != hare)
 		{
-			node++;
+			nodes++;
 			tortoise = tortoise->next;
 		}
-		return (node);
+		return (nodes);
 	}
 	tortoise = tortoise->next;
 	hare = (hare->next)->next;
@@ -56,27 +56,27 @@ size_t looped_listint_len(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t node, index = 0;
+	size_t nodes, index = 0;
 
-	node = looped_listint_len(head);
+	nodes = looped_listint_len(head);
 
-	if (node == 0)
+	if (nodes == 0)
 	{
-		for (;head != NULL; node++)
+		for (;head != NULL; nodes++)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
+			printf("[%p]%d\n", (void *)head, head->n);
 			head = head->next;
 		}
 	}
 	else
 	{
-		for (index = 0; index < node; index++)
+		for (index = 0; index < nodes; index++)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
+			printf("[%p]%d\n", (void *)head, head->n);
 			head = head->next;
 		}
-		printf("->[%p] %d\n", (void *)head, head->n);
+		printf("->[%p]%d\n", (void *)head, head->n);
 
 	}
-	return (node);
+	return (nodes);
 }
