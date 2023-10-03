@@ -13,17 +13,15 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename)
 		return (-1);
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (text_content != NULL)
+	{
+		for (rwr = 0; text_content[rwr];)
+			rwr++;
+	}
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	nletters = write(fd, text_content, rwr);
 
-		if (fd == -1)
-			return (-1);
-		if (!text_content)
-		text_content = " ";
-		for (nletters = 0; text_content[nletters]; nletters++)
-		;
-		rwr = write(fd, text_content, nletters);
-
-		if (rwr == -1)
+		if (fd == -1 || nletters == -1)
 		return (-1);
 		close(fd);
 
