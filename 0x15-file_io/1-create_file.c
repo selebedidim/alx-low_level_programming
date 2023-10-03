@@ -2,16 +2,14 @@
 
 /**
  * create_file - create a file
- * @text_content:Content written in the file
- * @filename:text file being read
+ * @text_content:pointer to the name of the file
+ * @filename:pointer to a string to write
  * Return:success(1)
  *        if fail (-1)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	int nletters;
-	int rwr;
+	int fd, nletters, rwr = 0;
 
 	if (!filename)
 		return (-1);
